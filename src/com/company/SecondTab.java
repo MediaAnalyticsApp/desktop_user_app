@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
  */
 public class SecondTab extends AbstractTab {
     public String[] elements = new String[] {"www.lenta.ru", "www.vk.com", "www.mail.ru"};
+    Data data = new Data();
 
     SecondTab(String Name)
     {
@@ -23,7 +24,7 @@ public class SecondTab extends AbstractTab {
         JLabel siteLabel = new JLabel("Выберите сайт");
 
 
-        JComboBox siteComboBox = new JComboBox(elements);
+        JComboBox siteComboBox = new JComboBox(data.getListOfSites());
         sitePanel.add(siteLabel);
         sitePanel.add(siteComboBox);
         sitePanel.setMaximumSize(new Dimension(9999,50));
