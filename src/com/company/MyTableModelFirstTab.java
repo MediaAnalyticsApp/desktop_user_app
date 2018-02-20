@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class MyTableModelFirstTab extends AbstractTableModel
 {
     Data data = new Data();
-    ArrayList<Pretendents> listOfPeople = data.getListOfPeopleWithoutDate(Data.SITE_ON_FIRST_TAB);
+    ArrayList<Pretendents> listOfPeople;
 
 
     @Override
