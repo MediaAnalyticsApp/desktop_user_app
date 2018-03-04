@@ -1,6 +1,6 @@
 package com.company;
 
-import sun.rmi.runtime.Log;
+
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -12,15 +12,15 @@ import java.net.URL;
  */
 public class JsonExample {
     public static String getJSON(String urle) {
-
+        //String param = "?oauth_token=" + "85b34b33e430d9f1dc5fb8e1646f0dbf";
         try {
-            URL url = new URL(urle);
+            URL url = new URL(urle   );
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
             con.setRequestMethod("GET");
-            //con.setRequestProperty("Content-length", "0");
+            //con.setRequestProperty("Content-type", "application/json");
            // con.setConnectTimeout(30000);
-
+            //con.addRequestProperty("Authorization", "OAuth 85b34b33e430d9f1dc5fb8e1646f0dbf");
             con.connect();
             String v = con.getResponseMessage();
            con.getPermission();

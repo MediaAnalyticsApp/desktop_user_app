@@ -12,34 +12,52 @@ import org.json.simple.parser.*;
  */
 public class JSonDecoders {
 
-    public String [] decodeListOfSites(String input) throws ParseException {
-        String str = null;
-        ArrayList[] arr = null;
+    public static String[] decodeListOfSites(String input) throws ParseException {
+        ArrayList<String> arr = new ArrayList<String>();
         JSONParser parser = new JSONParser();
-        try {
-
-            Object obj = parser.parse(input);
-
-            JSONObject jsonObject = (JSONObject) obj;
-
-//            String name = (String) jsonObject.get("name");
-
-            // loop array
-            JSONArray msg = (JSONArray) jsonObject.get("");
-            Iterator<Integer,String> iterator = msg.iterator();
-            while (iterator.hasNext()) {
-                System.out.println(iterator);
-            }
 
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+                Object obj = parser.parse(input);
+
+            JSONArray jsonArray = (JSONArray) obj;
+        for (int i = 0; i < jsonArray.size() ; i++) {
+            JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+            String site = (String) jsonObject.get("name");
+            arr.add(site);
+
+
         }
 
+            String[] array =  arr.toArray(new String [arr.size()]);
+
+
+       return array;
+ }
+
+    public static ArrayList<Pretendents> decodeListOfPeopleWithoutDate (String input) throws ParseException {
+        ArrayList<Pretendents> pret = new ArrayList<Pretendents>();
+        JSONParser parser = new JSONParser();
+
+
+        Object obj = parser.parse(input);
+
+        JSONArray jsonArray = (JSONArray) obj;
+        for (int i = 0; i < jsonArray.size() ; i++) {
+            JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+
+
+            String site = (String) jsonObject.get("Site");
+            String name = (String) jsonObject.get("Name");
+            int number = (int) jsonObject.get("Number");
+            Pretendents person = new Pretendents(site,name,number);
+            pret.add(person);
+
+
+        }
+
+        return pret;
     }
 
-        return null;
-    }
+
+
 }

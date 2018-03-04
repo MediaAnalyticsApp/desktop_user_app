@@ -18,11 +18,12 @@ public class Data {
 //    public final String listOfsitesFromWebService = site + "/sites.json";
 
     FixedConnector connector = new FixedConnector();
+    SiteConnector connector2 = new SiteConnector();
 
 
     public  String[] getListOfSites() {
 
-        String[] mas = connector.findListOfSites();
+        String[] mas = connector2.findListOfSites();
         SITE_ON_FIRST_TAB = mas[0];
         SITE_ON_SECOND_TAB = mas[0];
 
