@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Интерфейс пользователя:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/__jar</output-path>
-    <root id="archive" name="Интерфейс пользователя.jar">
-      <element id="module-output" name="Интерфейс пользователя" />
-    </root>
-  </artifact>
-</component>
