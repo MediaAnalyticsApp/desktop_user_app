@@ -14,14 +14,16 @@ public class Data {
     static String SITE_ON_SECOND_TAB;
     static Date DATE_OF_SCAN_FROM= new Date(0);
     static Date DATE_OF_SCAN_TO = new Date(0);
-
+//    public final String site = "http://54.64.85.75:3000/api/v1/";
+//    public final String listOfsitesFromWebService = site + "/sites.json";
 
     FixedConnector connector = new FixedConnector();
+    SiteConnector connector2 = new SiteConnector();
 
 
     public  String[] getListOfSites() {
 
-        String[] mas = connector.findListOfSites();
+        String[] mas = connector2.findListOfSites();
         SITE_ON_FIRST_TAB = mas[0];
         SITE_ON_SECOND_TAB = mas[0];
 
@@ -67,5 +69,7 @@ public class Data {
 
         return list;
     }
+
+
 
 }
